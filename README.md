@@ -58,6 +58,58 @@ The model predicts the **Conditional Average Treatment Effect (CATE)** using the
 ## 💼 Business Problem & Solution
 
 ### The Challenge
+
+Traditional response models waste marketing budget by targeting:
+
+| Customer Segment | Behavior | Marketing Result | Budget Impact |
+|-----------------|----------|------------------|---------------|
+| 🎯 **Sure Things** | Buy regardless of email | Unnecessary spend | 💸 Wasted |
+| 😴 **Sleeping Dogs** | Churn due to email | Negative impact | 💸 Lost revenue |
+| 🤷 **Lost Causes** | Never buy | No conversion | 💸 Wasted |
+| ✨ **Persuadables** | Buy ONLY if contacted | Incremental revenue | ✅ ROI positive |
+
+**Problem:** 70-80% of marketing spend targets the wrong customers.
+
+### The Solution
+
+Built an intelligent targeting system that:
+- ✅ **Identifies Persuadables** - Customers who convert specifically because of treatment
+- ✅ **Filters Sleeping Dogs** - Prevents negative interactions that harm brand
+- ✅ **Optimizes Budget** - Allocates spending only where it creates incremental value
+- ✅ **Maximizes ROI** - Increases campaign efficiency by 4.5x vs baseline
+
+**Dataset:** Kevin Hillstrom Email Analytics Dataset (42,613 customers)  
+**Treatment:** Men's Merchandise Email Campaign  
+**Outcome:** Purchase Conversion
+
+---
+
+## ⭐ Key Features
+
+### 🧠 Advanced Machine Learning
+- **Causal Inference** with Class Transformation (Lai Method)
+- **XGBoost** ensemble model optimized for uplift detection
+- Custom **Qini AUC** metric for model evaluation
+- Automated **hyperparameter tuning** pipeline
+
+### 📊 Interactive Dashboard
+- Real-time customer scoring via **Streamlit** web app
+- Beautiful **Plotly** visualizations with dark theme
+- Dynamic threshold adjustment for targeting flexibility
+- ROI calculator with customizable cost parameters
+
+### 🎯 Business Intelligence
+- Customer segmentation into 4 actionable groups
+- Top N high-value target identification
+- Campaign performance forecasting
+- Export-ready CSV with prioritized contact lists
+
+### 🔧 Production-Ready Pipeline
+- Automated data preprocessing with `sklearn.Pipeline`
+- Feature encoding and scaling
+- Model persistence with `joblib`
+- Modular, maintainable codebase
+
 ---
 
 ## 🎨 Demo
@@ -124,9 +176,8 @@ Uplift Model (Smart):
   Contacts: 5,000  | Cost: $500   | Conversions: ~1,650 | Revenue: ~$82,500
   
 Improvement: +10% revenue | -50% cost | +165% ROI
-```who convert specifically because of treatment
-- ✅ **Filters Sleeping Dogs** - Prevents negative interactions that harm brand
-- ✅ **Optimizes Budget** - Allocates spending only where it creates incremental value
+```
+
 ---
 
 ## 🏗️ Technical Architecture
